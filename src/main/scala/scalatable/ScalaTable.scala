@@ -3,15 +3,11 @@ package scalatable
 case class ScalaTable[A <: Row](sequence: Seq[A], name: Option[String] = None)(implicit tag: reflect.ClassTag[A])
   extends IndexedSeq[A] {
 
-  private def extractFieldNames[A] : Array[String] = tag.runtimeClass.getDeclaredFields.map(_.getName)
-
   def show: Unit = TableFormatter.show(sequence)
-
-  def columns: Array[String] = extractFieldNames[A]
 
   def append(otherSeq : A*): ScalaTable[A] = ScalaTable(this.sequence ++ otherSeq)
 
-  def remove(otherSeq : A*): ScalaTable[A] = ScalaTable(this.sequence.filter(e => otherSeq.contains(e)))
+  def remove(otherSeq : A*): ScalaTable[A] = ScalaTable(this.sequence.diff(otherSeq))
 
   override def take(n: Int): ScalaTable[A] = ScalaTable(
     this.sequence.take(n)
@@ -24,6 +20,10 @@ case class ScalaTable[A <: Row](sequence: Seq[A], name: Option[String] = None)(i
   override def length: Int = sequence.length
 
   override def iterator: Iterator[A] = super.iterator
+
+  override def isEmpty: Boolean = super.isEmpty
+
+  override def nonEmpty: Boolean = super.nonEmpty
 
 }
 
