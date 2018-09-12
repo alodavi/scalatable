@@ -1,0 +1,15 @@
+.idea/scopes/
+.idea/dictionaries/
+.idea/inspectionProfiles/
+.idea/libraries/
+.idea/modules/
+.idea/.name
+.idea/*.xml
+.idea/vcs.xml
+.idea/uiDesigner.xml
+/target
+/*.bat
+*.class
+.DS_Store
+*~
+target/
