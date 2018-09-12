@@ -1,0 +1,5 @@
+package scalatable
+
+class ScalaTableSpec {
+
+}
