@@ -23,9 +23,10 @@ class ScalaTableSpec extends Specification {
 
   def testAppend = {
 
-    val newTable = sampleTable.append(Cat("Snowball", "white", 2 ))
+    val newTable = sampleTable.append(Cat("Snowball", "white", 2))
 
-    newTable must beEqualTo(ScalaTable(Seq(cat1, cat2, Cat("Snowball", "white", 2 ))))
+    newTable must beEqualTo(
+      ScalaTable(Seq(cat1, cat2, Cat("Snowball", "white", 2))))
 
   }
 
