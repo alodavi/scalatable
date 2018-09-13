@@ -1,4 +1,5 @@
 ## scalatable
+[![Build Status](https://travis-ci.com/alodavi/scalatable.svg?branch=master)](https://travis-ci.org/alodavi/scalatable)
 
 scalatable is a library for handling tabular data.
 
