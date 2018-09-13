@@ -1,8 +1,8 @@
-#scalatable
+##scalatable
 
 scalatable is a library for handling tabular data.
 
-## Usage
+### Usage
 
 You can create a `ScalaTable` out of any case class:
 
