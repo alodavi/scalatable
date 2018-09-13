@@ -13,4 +13,3 @@ scalacOptions in Test ++= Seq("-Yrangepos")
 enablePlugins(TutPlugin)
 
 tutTargetDirectory := baseDirectory.value
-

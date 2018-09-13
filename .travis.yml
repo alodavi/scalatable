@@ -6,4 +6,4 @@ jdk:
 sudo: true
 
 script:
-    - sbt test
+    - sbt tut test
