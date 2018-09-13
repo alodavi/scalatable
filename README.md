@@ -1,4 +1,4 @@
-##scalatable
+## scalatable
 
 scalatable is a library for handling tabular data.
 
