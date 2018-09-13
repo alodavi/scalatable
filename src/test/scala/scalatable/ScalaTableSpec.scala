@@ -19,11 +19,11 @@ class ScalaTableSpec extends Specification {
   val cat2 = Cat("Elliot", "black", 1)
   val cats: Seq[Cat] = Seq(cat1, cat2)
 
-  val sampleTable: ScalaTable[Cat] = ScalaTable(Seq(cat1, cat2))
+  val catsTable: ScalaTable[Cat] = ScalaTable(Seq(cat1, cat2))
 
   def testAppend = {
 
-    val newTable = sampleTable.append(Cat("Snowball", "white", 2))
+    val newTable = catsTable.append(Cat("Snowball", "white", 2))
 
     newTable must beEqualTo(
       ScalaTable(Seq(cat1, cat2, Cat("Snowball", "white", 2))))
@@ -32,14 +32,14 @@ class ScalaTableSpec extends Specification {
 
   def testRemove = {
 
-    val removeTable = sampleTable.remove(cat2)
+    val removeTable = catsTable.remove(cat2)
 
     removeTable must beEqualTo(ScalaTable(Seq(cat1)))
 
   }
 
   def testTake = {
-    sampleTable.take(1) must beEqualTo(ScalaTable(Seq(cat1)))
+    catsTable.take(1) must beEqualTo(ScalaTable(Seq(cat1)))
   }
 
 }
